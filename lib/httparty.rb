@@ -106,6 +106,12 @@ module HTTParty
       default_options[:format] = f
     end
     
+    # Allows one to modify the response body before it's
+    # passed to Crack for parsing
+    def response_filter(f)
+      default_options[:response_filter] = f
+    end
+    
     # Allows making a get request to a url.
     #
     #   class Foo

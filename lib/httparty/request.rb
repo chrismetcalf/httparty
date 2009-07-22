@@ -98,12 +98,14 @@ module HTTParty
             @redirect = true
             perform
           else
+            # Add filter here
             parsed_response = parse_response(response.body)
             Response.new(parsed_response, response.body, response.code, response.message, response.to_hash)
           end
       end
       
       def parse_response(body)
+        # Or add filter here
         return nil if body.nil? or body.empty?
         case format
           when :xml
